@@ -10,5 +10,5 @@ Question 5
 MAE:  0.2717
 RMSE: 0.366
 R^2:  0.0722
-This can help transfer the plots of the movies into a quantitive way to predict the type of movie, however it contains some limitations. First, if the sample size is small, it will directly impact the embedding quality, and the impact maybe larger than the bag-of-words when using the small sample size. In addition, the interpretation of this approach may less interpretable compared to bag of words, since each word has been converted into a dimension, and it is hard to which dimension represents what kinds of meaning. 
-<img width="468" height="233" alt="image" src="https://github.com/user-attachments/assets/fe062bec-f22c-44a3-b051-520f23c20aea" />
+This can help transfer the plots of the movies into a quantitive way to predict the type of movie, however it contains some limitations. First, if the sample size is small, it will directly impact the embedding quality, and the impact maybe larger than the bag-of-words when using the small sample size. In addition, the interpretation of this approach may less interpretable compared to bag of words, since each word has been converted into a dimension, and it is hard to determine which dimension represents what kinds of meaning. 
+
