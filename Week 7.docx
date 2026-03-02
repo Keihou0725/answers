@@ -1,27 +1,9 @@
-Question 4 
-I used  the local hugging face model with Qwen 2.5-1.5B, 
-There are totally five  parse failures among 15 ones, which counts 33.33%
-For the invalid outputs, if pharsing or validating failed, I created a fallback record named event extraction with safe default values and added parse failure tags. 
-prompt_instructions = (
-    "You are extracting ONE event record from the given text.\n\n"
-    "Return EXACTLY ONE JSON object and nothing else.\n"
-    "No markdown. No code fences. No extra commentary.\n\n"
-    "JSON MUST match this schema and constraints:\n"
-    "- doc_id: string (copy Document ID exactly)\n"
-    "- event_type: one of [\"protest\",\"election\",\"policy_change\",\"violence\",\"disaster\",\"other\"]\n"
-    "- event_date_iso: \"YYYY-MM-DD\" or null\n"
-    "- date_is_approximate: true/false\n"
-    "- country/admin1_or_state/city_or_local: string or null\n"
-    "- geo_precision: one of [\"country_only\",\"admin1_or_state\",\"city_or_local\",\"unknown\"]\n"
-    "- actors: array of strings (can be empty)\n"
-    "- outcome_summary: string or null (one sentence)\n"
-    "- extraction_confidence: number between 0 and 1\n"
-    "- uncertainty_flags: array of strings\n"
-    "- evidence: array of objects with keys:\n"
-    "    - field: one of [\"event_type\",\"date\",\"location\",\"actors\",\"outcome\"]\n"
-    "    - quote: short exact quote copied from the text (\"\" if not available)\n\n"
-    "If a field is unknown, use null (or [] for actors/evidence).\n"
-)
+ 
+
+Conceptual: 
+Since Schema constrained the LLM to fulfilled the blank parts, working as assistance, but not automation.  Even though we constrained the LLM by using this method, the results are probabilistic outputs. Using Schema is helpful in fixing the format, but do not guarantee the content accuracy. For instance, I asked the LLM to fulfill the blank part as answer who did what at what time, it can perform as a non-human behavior, such as my cat watched movies by herself, but actually it was me to watch the movie. 
+
+
 Question 4 
 I used  the local hugging face model with Qwen 2.5-1.5B, 
 There are totally five  parse failures among 15 ones, which counts 33.33%
